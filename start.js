@@ -8,7 +8,6 @@ var mosca = require('mosca');
 var express = require('express');
 var app = express();
 
-
 var moscaSettings = {
     backend: {
         //using ascoltatore
@@ -51,5 +50,12 @@ function published (packet, client) {
 
 
 //express start http server
+app.use(express.static(__dirname + '/app'));
+app.use(express.static(__dirname + '/'));
+
+app.get('/',function (req, res) {
+    console.log('load test page');
+    res.redirect('app/index.html');  //redirect to app
+});
 
 app.listen(3000);
