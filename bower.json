@@ -1,0 +1,25 @@
+{
+  "name": "letstalk",
+  "description": "Let us Talk",
+  "main": "",
+  "authors": [
+    "Nathan Ni"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "app/index.html",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "angularjs#~1.4.8",
+    "angular-ui-router": "~0.2.15",
+    "bootstrap": "~3.3.5",
+    "mqttjs-browser": "mqtt-browser#~0.0.1"
+  }
+}

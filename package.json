@@ -1,0 +1,15 @@
+{
+  "name": "letstalk",
+  "version": "1.0.0",
+  "description": "Let us Talk",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nathan Ni",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.3",
+    "mosca": "^0.32.1",
+    "mqtt": "^1.5.0"
+  }
+}
