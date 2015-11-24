@@ -1,10 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="Letstalk">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+
+    <!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <![endif]-->
+
+    <title>Let us Talk</title>
+
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/>
+    <!-- FONT AWESOME  CSS -->
+    <link href="styles/css/font-awesome.css" rel="stylesheet"/>
+    <!-- CUSTOM STYLE CSS -->
+    <link href="styles/css/style.css" rel="stylesheet"/>
+
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="../bower_components/mqttjs-browser/js/browserMqtt.js"></script>
+    <script src="../bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+    <script src="scripts/app.js"></script>
 </head>
 <body>
-<a href="test.html">go to test</a>
+<div ui-view></div>
+
+<!--<div ui-view="userlist"></div>
+<div ui-view="conversation"></div>-->
 </body>
 </html>

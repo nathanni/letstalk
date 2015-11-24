@@ -20,6 +20,7 @@
     "angular": "angularjs#~1.4.8",
     "angular-ui-router": "~0.2.15",
     "bootstrap": "~3.3.5",
-    "mqttjs-browser": "mqtt-browser#~0.0.1"
+    "mqttjs-browser": "mqtt-browser#~0.0.1",
+    "angular-bootstrap": "~0.14.3"
   }
 }

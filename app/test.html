@@ -1,35 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
+<html ng-app="MyModule">
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="scripts/controllers/testchat.js"></script>
+    <script src="../bower_components/mqttjs-browser/js/browserMqtt.js"></script>
 </head>
-<script src="../bower_components/mqttjs-browser/js/browserMqtt.js"></script>
-<script src="../bower_components/angular/angular.js"></script>
-<script>
 
-    angular.module('MyModule',[]).controller('MyCtrl',['$scope', function($scope){
-        $scope.connect = function() {
-
-            var client = mqtt.connect('ws://localhost:1889'); // you add a ws:// url here
-            client.subscribe("mqtt/demo");
-
-            client.on("message", function (topic, payload) {
-                alert([topic, payload].join(": "));
-                client.end();
-            });
-
-            client.publish("mqtt/demo", "hello world!");
-        }
-    }]);
-
-</script>
-<body>
-
-
-<div class="container" ng-app="MyModule" ng-controller="MyCtrl">
+<div  ng-controller="TestChat">
 
     <button ng-click="connect()">click me</button>
+    <br>
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+    <input type="text"> <button>send</button>
+
 </div>
-</body>
+
 </html>
