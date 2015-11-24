@@ -1,6 +1,28 @@
-<div class="jumbotron text-center">
-    <h2>首页</h2>
-    <p>
-        首页的形式一般比较<span class="text-danger">灵活</span>，而且可能随时发生变化。
-    </p>
-</div>
+<div class="container">
+
+    <div class="row" id="pwd-container">
+        <div class="col-md-4"></div>
+
+        <div class="col-md-4">
+            <section class="login-form">
+                <form role="login" >
+                    <img src="images/logo.png" class="img-responsive" alt="" />
+                    <input type="text" name="username" placeholder="Username" required class="form-control input-lg" value="" ng-model="client_id"/>
+
+     <!--               <input type="password" class="form-control input-lg" id="password" placeholder="Password" required="" />-->
+
+                    <div class="pwstrength_viewport_progress"></div>
+
+                    <button name="go" class="btn btn-lg btn-primary btn-block" ng-click="connect()">Sign in</button>
+                    <div>
+                        <a href="#">Create account</a> or <a href="#">reset password</a>
+                    </div>
+
+                </form>
+            </section>
+        </div>
+
+        <div class="col-md-4"></div>
+
+
+    </div>

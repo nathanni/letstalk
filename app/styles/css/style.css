@@ -21,12 +21,15 @@ body {
 }
 
 .chat-box-main {
-    height:541px;
+    height:642px;
     overflow:auto;
 }
 .chat-box-div {
-    border:2px solid #999e9a;
-    border-bottom:2px solid #999e9a;
+    color: #5d5d5d;
+    background: #f2f2f2;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
 } 
 .chat-box-head {
     padding: 10px 15px;
@@ -117,21 +120,24 @@ padding: 10px;
 }
 
 .chat-box-online {
-    height:554px;
+    height:664px;
     overflow:auto;
 }
 .chat-box-online-div {
-    border:2px solid #999e9a;
-    border-bottom:2px solid #999e9a;
+    color: #5d5d5d;
+    background: #f2f2f2;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
 } 
 
 .chat-box-online-head {
     padding: 10px 15px;
-border-bottom: 2px solid #1f1e20;
-background-color: #1f1e20;
-color: #fff;
-text-align: center;
-
+    border-bottom: 2px solid #1f1e20;
+    background-color: #1f1e20;
+    color: #fff;
+    text-align: center;
+    -moz-border-radius: 10px;
 }
 
 .chat-box-online-left {
@@ -156,24 +162,53 @@ text-align: center;
         
     }
 
-    /*======================================
+/*======================================
   NEW  CHAT  STYLES
 ======================================= */
 
 .chat-box-new {
-    height:554px;
+    height:664px;
     overflow:auto;
 }
 .chat-box-new-div {
-    border:2px solid #999e9a;
-    border-bottom:2px solid #999e9a;
+    color: #5d5d5d;
+    background: #f2f2f2;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
 } 
 
 .chat-box-new-head {
     padding: 10px 15px;
-border-bottom: 2px solid #1f1e20;
-background-color: #1f1e20;
-color: #fff;
-text-align: center;
+    border-bottom: 2px solid #1f1e20;
+    background-color: #1f1e20;
+    color: #fff;
+    text-align: center;
+    -moz-border-radius: 10px;
+
+}
+
+/*======================================
+  CHANNEL STYLES
+======================================= */
+.channel {
+    height:664px;
+    overflow:auto;
+}
+.channel-div {
+    color: #5d5d5d;
+    background: #f2f2f2;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+
+.channel-head {
+    padding: 10px 15px;
+    border-bottom: 2px solid #1f1e20;
+    background-color: #1f1e20;
+    color: #fff;
+    text-align: center;
+    -moz-border-radius: 10px;
 
 }

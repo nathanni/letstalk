@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="Letstalk">
+<html lang="en" ng-app="letstalk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
@@ -17,6 +17,7 @@
     <link href="styles/css/font-awesome.css" rel="stylesheet"/>
     <!-- CUSTOM STYLE CSS -->
     <link href="styles/css/style.css" rel="stylesheet"/>
+    <link href="styles/css/signin.css" rel="stylesheet"/>
 
     <script src="../bower_components/jquery/dist/jquery.js"></script>
     <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
@@ -25,6 +26,10 @@
     <script src="../bower_components/mqttjs-browser/js/browserMqtt.js"></script>
     <script src="../bower_components/angular-bootstrap/ui-bootstrap.js"></script>
     <script src="scripts/app.js"></script>
+    <script src="scripts/services/chatFactory.js"></script>
+    <script src="scripts/controllers/ChatController.js"></script>
+    <script src="scripts/controllers/NavController.js"></script>
+
 </head>
 <body>
 <div ui-view></div>

@@ -1,7 +1,7 @@
 /**
  * Created by Nathan on 11/23/2015.
  */
-var letstalk = angular.module('Letstalk', ['ui.router','ui.bootstrap']);
+var letstalk = angular.module('letstalk', ['ui.router','ui.bootstrap']);
 
 
 letstalk.config(function ($stateProvider, $urlRouterProvider) {
@@ -15,14 +15,24 @@ letstalk.config(function ($stateProvider, $urlRouterProvider) {
                 templateUrl: "views/home.html"
             },
             'nav@index': {
-                templateUrl: "views/nav.html"
+                templateUrl: "views/nav.html",
+                controller : "NavController"
             },
             'main@index': {
-                templateUrl: "views/main.html"
+                templateUrl: "views/main.html",
+                controller : "ChatController",
+                controllerAs:"cc"
             }
         }
-    })
-    .state('index.userlist', {
+    }).state('index.channellist', {
+        url: "/channellist",
+        views: {
+            'main@index': {
+                templateUrl: "views/channellist.html"
+            }
+        }
+
+    }).state('index.userlist', {
         url: "/userlist",
         views: {
             'main@index': {
