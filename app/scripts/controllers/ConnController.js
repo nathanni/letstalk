@@ -3,17 +3,20 @@
  */
 angular.module('letstalk')
     .controller('ConnController',['$scope', 'chatFactory', 'connection',  function($scope,chatFactory,connection) {
-        $scope.client_id = "";
+        $scope.clientId = "";
         $scope.topic = "";
 
         $scope.connect = function(){
 
-            if($scope.client_id === "")
+            if($scope.clientId === "")
                 return;
             if($scope.topic === "") $scope.topic = "default";
 
             //need to broadcast client id
-            connection.setClientId($scope.client_id);
+            connection.setClientId($scope.clientId);
+
+            //set topic
+            connection.setTopic($scope.topic);
 
             //connect to server
             $scope.client=mqtt.connect('ws://localhost:1889');
@@ -23,10 +26,8 @@ angular.module('letstalk')
             $scope.client.on('connect', function() {
                 console.log('connected');
 
-                //$scope.client.subscribe("MyTopic");
-
                 //subscribe a topic
-                $scope.client.subscribe('topic/'+$scope.topic,{qos:1},function(err, granted){
+                $scope.client.subscribe($scope.topic,{qos:1},function(err, granted){
                     if(err){
                         console.log('subscribe failed');
                     }else{

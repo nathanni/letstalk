@@ -6,13 +6,15 @@ angular.module('letstalk').controller('ChatController', [
 
         $scope.client = connection.client;
         $scope.message = "";
-        $scope.topic = "";
+        $scope.topic = connection.topic;
+        $scope.clientId = connection.clientId;
 
         //publish a message
         $scope.send = function () {
+
             $scope.client.publish($scope.topic,
                 JSON.stringify({
-                    Id: $scope.client_id,
+                    Id: $scope.clientId,
                     Msg: $scope.message
                 }),
                 {qos: 1, retain: true},
@@ -23,9 +25,22 @@ angular.module('letstalk').controller('ChatController', [
                 });
         };
 
+
+
+        //fire on when recevie a message
+        $scope.client.on('message', function (topic, message) {
+            // message is Buffer
+            var packet=JSON.parse(message);
+            if(packet.Id !== $scope.clientId)
+                appendReceviedMsg(packet.Msg,packet.Id);
+        });
+
         var appendSentMsg = function(message){
             $('.panel-body').append($compile("<div sender-msg message='"+message+"' Id='"+ $scope.client_id+"'></div>")($scope));
         };
 
+        var appendReceviedMsg = function(message,id){
+            $('.panel-body').append($compile("<div receiver-msg message='"+message+"' Id='"+id+"'></div>")($scope));
+        };
 
     }]);
