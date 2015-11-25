@@ -11,20 +11,20 @@ angular.module('letstalk').factory('connection', ['$rootScope', function ($rootS
 
     connection.setClient = function(client) {
         this.client = client;
+        this.broadcastClient();
     };
 
     connection.setClientId = function(id) {
         this.clientId = id;
-        this.broadcastId();
     };
 
     connection.setTopic = function(topic) {
         this.topic = topic;
     };
 
-    //client id broadcast
-    connection.broadcastId = function() {
-        $rootScope.$broadcast('handleClientId');
+    //client broadcast
+    connection.broadcastClient = function() {
+        $rootScope.$broadcast('handleClient');
     };
 
     return connection;

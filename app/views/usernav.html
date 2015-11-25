@@ -1,0 +1,31 @@
+<!--<script>
+    //tab active
+    $('ul.navbar-nav li a').click(function () {
+        $('ul.navbar-nav li.active').removeClass('active');
+        $(this).parent('li').addClass('active')
+    })
+</script>-->
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand">LetsTalk</a>
+        </div>
+        <div>
+            <ul class="nav navbar-nav">
+                <li ng-class="{active: isActive('/index/lobby')}"><a ui-sref="index.lobby"><span class="glyphicon glyphicon-fire"></span> Lobby</a></li>
+                <li ng-class="{active: isActive('/index/friends')}"><a ui-sref="index.friends"><span class="glyphicon glyphicon-comment"></span>  Friends</a></li>
+                <li ng-class="{active: isActive('/index/groups')}"><a ui-sref="index.groups"><span class="glyphicon glyphicon-leaf"></span>  Groups</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right" ng-show="clientId">
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href=""><span class="glyphicon glyphicon-credit-card"></span> {{clientId}}<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href=""><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+                        <li><a href=""><span class="glyphicon glyphicon-cog"></span> Setting</a></li>
+                        <li><a href=""><span class="glyphicon glyphicon-off"></span> Log out</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

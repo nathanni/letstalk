@@ -12,14 +12,18 @@ letstalk.config(function ($stateProvider, $urlRouterProvider) {
         url: "/index",
         views: {
             '': {
-                templateUrl: "views/home.html"
+                templateUrl: "views/home.html",
+                controller: "HomeController"
             },
             'nav@index': {
-                templateUrl: "views/nav.html",
+                templateUrl: "views/nav.html"
+            },
+            'userNav@index': {
+                templateUrl: "views/usernav.html",
                 controller : "NavController"
             },
-            'main@index': {
-                templateUrl: "views/main.html",
+            'login@index': {
+                templateUrl: "views/login.html",
                 controller : "ConnController"
             }
         }

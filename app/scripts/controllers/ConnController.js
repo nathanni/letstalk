@@ -41,11 +41,6 @@ angular.module('letstalk')
                 connection.setClient($scope.client);
             });
 
-            //change view to lobby
-            //changeView("/index/lobby");
         };
 
-        var changeView = function (view) {
-            window.path(view); // path not hash
-        }
 }]);
