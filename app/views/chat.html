@@ -1,7 +1,7 @@
 <div class="col-lg-9 col-md-9 col-sm-9">
     <div class="chat-box-div">
         <div class="panel-body chat-box-main">
-            <div class="chat-box-left">
+<!--            <div class="chat-box-left">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </div>
@@ -36,13 +36,13 @@
                 <img src="Images/user.gif" alt="bootstrap Chat box user image" class="img-circle" />
                 - Romin Royeelin
             </div>
-            <hr class="hr-clas" />
+            <hr class="hr-clas" />-->
         </div>
         <div class="chat-box-footer">
             <div class="input-group">
-                <input type="text" class="form-control" placeholder="Enter Text Here...">
+                <input type="text" class="form-control" placeholder="Enter Text Here..." ng-model="message">
                             <span class="input-group-btn">
-                                <button class="btn btn-info" type="button">SEND</button>
+                                <button class="btn btn-info" type="button" ng-click="send()">SEND</button>
                             </span>
             </div>
         </div>

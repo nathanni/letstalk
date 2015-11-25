@@ -20,15 +20,21 @@ letstalk.config(function ($stateProvider, $urlRouterProvider) {
             },
             'main@index': {
                 templateUrl: "views/main.html",
-                controller : "ChatController",
-                controllerAs:"cc"
+                controller : "ConnController"
             }
         }
-    }).state('index.channellist', {
-        url: "/channellist",
+    }).state('index.channel', {
+        url: "/channel",
         views: {
             'main@index': {
+                templateUrl: "views/channel.html"
+            },
+            'channellist@index.channel': {
                 templateUrl: "views/channellist.html"
+            },
+            'chat@index.channel': {
+                templateUrl: "views/chat.html",
+                controller : "ChatController"
             }
         }
 
@@ -39,6 +45,9 @@ letstalk.config(function ($stateProvider, $urlRouterProvider) {
                 templateUrl: "views/userlist.html"
             }
         }
+    }).state('index.userlist.chat', {
+        url: '/chat',
+        templateUrl: 'views/chat.html'
     }).state('index.chatlist', {
         url: "/chatlist",
         views: {
@@ -46,8 +55,5 @@ letstalk.config(function ($stateProvider, $urlRouterProvider) {
                 templateUrl: "views/chatlist.html"
             }
         }
-    }).state('index.userlist.chat', {
-        url: '/chat',
-        templateUrl: 'views/chat.html'
     });
 });

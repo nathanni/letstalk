@@ -33,12 +33,16 @@ var server = new mosca.Server(moscaSettings);
 server.on('ready', setup);
 server.on('clientConnected', clientConnected);
 server.on('published', published);
+server.on('subscribed', subscribed);
+server.on('clientDisconnecting', clientDisconnecting);
+server.on('clientDisconnected', clientDisconnected);
 
 // fired when the mqtt server is ready
 function setup() {
     console.log('Mosca server is up and running')
 }
 
+// fired whena  client is connected
 function clientConnected(client) {
     console.log('Client connected', client.id);
 }
@@ -47,6 +51,24 @@ function clientConnected(client) {
 function published (packet, client) {
     console.log('Published', packet.payload);
 }
+
+// fired when a client subscribes to a topic
+function subscribed (topic, client) {
+    console.log('subscribed : ', topic);
+}
+
+// fired when a client is disconnecting
+function clientDisconnecting(client) {
+    console.log('clientDisconnecting : ', client.id);
+}
+
+// fired when a client is disconnected
+function clientDisconnected(client) {
+    console.log('clientDisconnected : ', client.id);
+}
+
+
+
 
 
 //express start http server

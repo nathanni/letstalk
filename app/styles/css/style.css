@@ -1,17 +1,19 @@
-﻿
-/*======================================
+﻿/*======================================
     GENERAL STYLES
 ======================================= */
 
 body {
-   font-family:Verdana;
+    font-family: Verdana;
 }
+
 .pad-top {
-    padding-top:30px;
+    padding-top: 30px;
 }
+
 .pad-bottom {
-     padding-bottom:30px;
+    padding-bottom: 30px;
 }
+
 /*======================================
     CHAT BOX STYLES
 ======================================= */
@@ -21,36 +23,35 @@ body {
 }
 
 .chat-box-main {
-    height:642px;
-    overflow:auto;
+    height: 525px;
+    overflow: auto;
 }
+
 .chat-box-div {
     color: #5d5d5d;
     background: #f2f2f2;
     border-radius: 10px;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-} 
+
+}
+
 .chat-box-head {
     padding: 10px 15px;
-border-bottom: 2px solid #A12EB3;
-background-color: #B25AE5;
-color: #fff;
-text-align: center;
-
+    border-bottom: 2px solid #A12EB3;
+    background-color: #B25AE5;
+    color: #fff;
+    text-align: center;
 }
 
 .chat-box-left {
     width: 100%;
     height: auto;
     padding: 15px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
     border-radius: 5px;
     position: relative;
     border: 1px solid #C5C5C5;
-    font-size:12px;
+    font-size: 12px;
 }
+
 .chat-box-left:after {
     top: 100%;
     left: 10%;
@@ -65,25 +66,25 @@ text-align: center;
 .chat-box-name-left {
     margin-top: 30px;
     margin-left: 60px;
-    text-align:left;
-    color:#049E64;
+    text-align: left;
+    color: #049E64;
 }
-    .chat-box-name-left img {
-        max-width:40px;
-        border: 2px solid #049E64;
-    }
 
-    .chat-box-right {
+.chat-box-name-left img {
+    max-width: 40px;
+    border: 2px solid #049E64;
+}
+
+.chat-box-right {
     width: 100%;
     height: auto;
     padding: 15px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
     border-radius: 5px;
     position: relative;
     border: 1px solid #C5C5C5;
-    font-size:12px;
+    font-size: 12px;
 }
+
 .chat-box-right:after {
     top: 100%;
     right: 10%;
@@ -99,37 +100,39 @@ text-align: center;
     color: #354EA0;
     margin-top: 30px;
     margin-right: 60px;
-    text-align:right;
+    text-align: right;
 }
 
 .chat-box-name-right img {
-        max-width:40px;
-        border: 2px solid #354EA0;
-    }
+    max-width: 40px;
+    border: 2px solid #354EA0;
+}
+
 .chat-box-footer {
     background-color: #D8D8D8;
-padding: 10px;
+    padding: 10px;
+    border-radius: 10px;
 }
+
 /*======================================
     CHAT BOX ONLINE STYLES
 ======================================= */
-
 
 .hr-clas-low {
     border-top: 1px solid #C5C5C5;
 }
 
 .chat-box-online {
-    height:664px;
-    overflow:auto;
+    height: 544px;
+    overflow: auto;
 }
+
 .chat-box-online-div {
     color: #5d5d5d;
     background: #f2f2f2;
     border-radius: 10px;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-} 
+
+}
 
 .chat-box-online-head {
     padding: 10px 15px;
@@ -137,46 +140,48 @@ padding: 10px;
     background-color: #1f1e20;
     color: #fff;
     text-align: center;
-    -moz-border-radius: 10px;
+    border-radius: 10px 10px 0 0;
 }
 
 .chat-box-online-left {
     margin-left: 10px;
-    text-align:left;
-    color:#049E64;
+    text-align: left;
+    color: #049E64;
 }
-    .chat-box-online-left img {
-        max-width:30px;
-        border:1px solid #049E64;
-        margin-bottom:10px;
-    }
-    .chat-box-online-right {
+
+.chat-box-online-left img {
+    max-width: 30px;
+    border: 1px solid #049E64;
+    margin-bottom: 10px;
+}
+
+.chat-box-online-right {
     margin-right: 10px;
-   text-align:right;
-    color:#354EA0;
+    text-align: right;
+    color: #354EA0;
 }
-    .chat-box-online-right img {
-       max-width:30px;
-        border:1px solid #354EA0;
-        margin-bottom:10px;
-        
-    }
+
+.chat-box-online-right img {
+    max-width: 30px;
+    border: 1px solid #354EA0;
+    margin-bottom: 10px;
+
+}
 
 /*======================================
   NEW  CHAT  STYLES
 ======================================= */
 
 .chat-box-new {
-    height:664px;
-    overflow:auto;
+    height: 544px;
+    overflow: auto;
 }
+
 .chat-box-new-div {
     color: #5d5d5d;
     background: #f2f2f2;
     border-radius: 10px;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-} 
+}
 
 .chat-box-new-head {
     padding: 10px 15px;
@@ -184,23 +189,21 @@ padding: 10px;
     background-color: #1f1e20;
     color: #fff;
     text-align: center;
-    -moz-border-radius: 10px;
-
+    border-radius: 10px 10px 0 0;
 }
 
 /*======================================
   CHANNEL STYLES
 ======================================= */
 .channel {
-    height:664px;
-    overflow:auto;
+    height: 544px;
+    overflow: auto;
 }
+
 .channel-div {
     color: #5d5d5d;
     background: #f2f2f2;
     border-radius: 10px;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
 }
 
 .channel-head {
@@ -209,6 +212,5 @@ padding: 10px;
     background-color: #1f1e20;
     color: #fff;
     text-align: center;
-    -moz-border-radius: 10px;
-
+    border-radius: 10px 10px 0 0;
 }

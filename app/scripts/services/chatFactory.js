@@ -1,7 +1,7 @@
 /**
  * Created by nni on 11/24/2015.
  */
-angular.module('letstalk').factory("chatFactory", function ($rootScope) {
+angular.module('letstalk').factory('chatFactory', function () {
 
     var chatFactory = {};
 
@@ -28,14 +28,6 @@ angular.module('letstalk').factory("chatFactory", function ($rootScope) {
         rejectUnauthorized: false
     };
 
-    chatFactory.handleClientId = function(id) {
-        this.options.clientId = id;
-        this.broadcastId();
-    };
-
-    chatFactory.broadcastId = function() {
-        $rootScope.$broadcast('handleClientId');
-    };
 
     return chatFactory;
 

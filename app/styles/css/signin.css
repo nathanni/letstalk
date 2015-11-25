@@ -24,7 +24,7 @@ http://www.bootstrapzen.com/item/135/simple-login-form-logo/
     font-size: 16px;
     height: auto;
     padding: 10px;
-    @include box-sizing(border-box);
+@include box-sizing(border-box);
 }
 
 body {
@@ -48,16 +48,19 @@ form[role=login] {
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
 }
+
 form[role=login] img {
     display: block;
     margin: 0 auto;
     margin-bottom: 35px;
 }
+
 form[role=login] input,
 form[role=login] button {
     font-size: 18px;
     margin: 16px 0;
 }
+
 form[role=login] > div {
     text-align: center;
 }
@@ -67,6 +70,7 @@ form[role=login] > div {
     margin-top: 1em;
     margin-bottom: 50px;
 }
+
 .form-links a {
     color: #fff;
 }
