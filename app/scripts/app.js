@@ -23,36 +23,36 @@ letstalk.config(function ($stateProvider, $urlRouterProvider) {
                 controller : "ConnController"
             }
         }
-    }).state('index.channel', {
-        url: "/channel",
+    }).state('index.lobby', {
+        url: "/lobby",
         views: {
             'main@index': {
-                templateUrl: "views/channel.html"
+                templateUrl: "views/lobby/lobby.html"
             },
-            'channellist@index.channel': {
-                templateUrl: "views/channellist.html"
+            'channels@index.lobby': {
+                templateUrl: "views/lobby/channels.html"
             },
-            'chat@index.channel': {
-                templateUrl: "views/chat.html",
+            'chat@index.lobby': {
+                templateUrl: "views/chat/chat.html",
                 controller : "ChatController"
             }
         }
 
-    }).state('index.userlist', {
-        url: "/userlist",
+    }).state('index.friends', {
+        url: "/friends",
         views: {
             'main@index': {
-                templateUrl: "views/userlist.html"
+                templateUrl: "views/friends/friendlist.html"
             }
         }
-    }).state('index.userlist.chat', {
+    }).state('index.friends.chat', {
         url: '/chat',
-        templateUrl: 'views/chat.html'
-    }).state('index.chatlist', {
-        url: "/chatlist",
+        templateUrl: 'views/chat/chat.html'
+    }).state('index.groups', {
+        url: "/groups",
         views: {
             'main@index': {
-                templateUrl: "views/chatlist.html"
+                templateUrl: "views/groups/grouplist.html"
             }
         }
     });

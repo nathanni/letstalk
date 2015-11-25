@@ -2,7 +2,7 @@
  * Created by Nathan on 11/24/2015.
  */
 angular.module('letstalk')
-    .controller('ConnController',['$scope', 'chatFactory', 'connection',  function($scope,chatFactory,connection) {
+    .controller('ConnController',['$scope','$location', 'chatFactory', 'connection',  function($scope,$location,chatFactory,connection) {
         $scope.clientId = "";
         $scope.topic = "";
 
@@ -18,9 +18,11 @@ angular.module('letstalk')
             //set topic
             connection.setTopic($scope.topic);
 
+            chatFactory.options.clientId = $scope.clientId;
+
             //connect to server
-            $scope.client=mqtt.connect('ws://localhost:1889');
-            //$scope.client=mqtt.connect(chatFactory.host, chatFactory.options);
+            //$scope.client=mqtt.connect('ws://localhost:1889');
+            $scope.client=mqtt.connect(chatFactory.host, chatFactory.options);
 
             //fire on when connect to server
             $scope.client.on('connect', function() {
@@ -38,5 +40,12 @@ angular.module('letstalk')
                 //save client to global
                 connection.setClient($scope.client);
             });
+
+            //change view to lobby
+            //changeView("/index/lobby");
         };
+
+        var changeView = function (view) {
+            window.path(view); // path not hash
+        }
 }]);
