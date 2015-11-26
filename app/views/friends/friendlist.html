@@ -3,27 +3,22 @@
         <div class="chat-box-online-head">
             ONLINE FRIENDS (2)
         </div>
-        <div class="panel-body chat-box-online">
+
+        <div class="panel-body chat-box-online" >
 
             <div class="chat-box-online-left">
-                <img src="images/user.png" alt="bootstrap Chat box user image" class="img-circle"/>
-                - Justine Goliyad
-                <br/>
-                (
-                <small>Active from 3 hours</small>
-                )
+                
+                <a  class="list-group-item" ng-repeat="friend in friends_list" ng-click="addChatWindow(friend.name)">
+                    <div>
+                        <img ng-src="images/Avatars/{{friend.id}}.jpg" alt="bootstrap Chat box user image" class="img-circle"/>
+                        <span>{{friend.name}}</span>
+                    </div>
+                </a>
             </div>
-            <hr class="hr-clas-low"/>
-
-            <div class="chat-box-online-right">
-                <img src="images/user.png" alt="bootstrap Chat box user image" class="img-circle" />
-                -  Romin Royeelin
-                <br />
-                ( <small>Active from 10 hours</small> )
-            </div>
-            <hr class="hr-clas-low" />
 
         </div>
     </div>
 </div>
-<div ui-view></div>
+<div id="chatWindow" class="col-lg-9 col-md-9 col-sm-9">
+
+</div>

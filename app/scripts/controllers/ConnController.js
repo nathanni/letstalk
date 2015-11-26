@@ -34,7 +34,15 @@ angular.module('letstalk')
                         console.log('subscribe failed');
                     }else{
                         console.log(granted);
-                    }
+                    };
+                
+                });
+                $scope.client.subscribe('topic/'+$scope.clientId,{qos:1},function(err, granted){
+                    if(err){
+                        console.log('subscribe failed');
+                    }else{
+                        console.log(granted);
+                    };
                 });
 
                 //save client to global

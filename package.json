@@ -9,7 +9,6 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.13.3",
-    "mosca": "^0.32.1",
-    "mqtt": "^1.5.0"
+    "mosca": "^0.32.1"
   }
 }

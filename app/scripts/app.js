@@ -46,7 +46,10 @@ letstalk.config(function ($stateProvider, $urlRouterProvider) {
         url: "/friends",
         views: {
             'main@index': {
-                templateUrl: "views/friends/friendlist.html"
+
+                templateUrl: "views/friends/friendlist.html",
+                controller:'friendsController',
+                controllerAs:'FC'
             }
         }
     }).state('index.friends.chat', {
