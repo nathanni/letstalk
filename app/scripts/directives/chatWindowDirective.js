@@ -1,4 +1,4 @@
-angular.module('letstalk').directive('chatWindow', ['connection','$compile',function (connection,$compile) {
+angular.module('letstalk').directive('chatWindow', ['connection','$compile','msgManager',function (connection,$compile,msgManager) {
 	return {
 		restrict: 'AE',
 		templateUrl:'views/friends/chatWindow.html',
@@ -6,14 +6,16 @@ angular.module('letstalk').directive('chatWindow', ['connection','$compile',func
 			topic:'@topic'
 		},
 		link: function (scope, iElement, iAttrs) {
-			
+			msgManager.storeScope(scope.topic,scope);
 			scope.clientId=connection.clientId;
 			scope.message = "";
 			scope.client=connection.client;
-			
 
+			scope.msgQ = msgManager.msgQs[scope.topic];
+			
+			//console.log(scope.msgQ);
 			var send = function(){
-				console.log(scope.message);
+				
 				scope.client.publish("topic/"+scope.topic,
                 JSON.stringify({
                     Id: scope.clientId,
@@ -21,26 +23,29 @@ angular.module('letstalk').directive('chatWindow', ['connection','$compile',func
                 }),
                 {qos: 1, retain: true},
                 function () {
-                    console.log(scope.message);
-                    appendSentMsg(scope.message);
+                	scope.msgQ.push({
+                					_id:scope.clientId,
+                           			_msgBody:scope.message,
+                            		_time:Date()
+                	});
+                    //appendSentMsg(scope.message);
                     scope.message = "";
+          
+                    scope.$apply();
                 });
-
-
-                
-
 			};
 			
 
+
 			scope.send=send;
 
-			scope.client.on('message', function (topic, message) {
+			// scope.client.on('message', function (topic, message) {
 			
-            // message is Buffer
-            var packet = JSON.parse(message);
-            if (packet.Id === scope.topic)
-                appendReceviedMsg(packet.Msg, packet.Id);
-        });
+   //          // message is Buffer
+   //          var packet = JSON.parse(message);
+   //          if (packet.Id === scope.topic)
+   //              appendReceviedMsg(packet.Msg, packet.Id);
+   //      });
 
 			
 
@@ -49,7 +54,6 @@ angular.module('letstalk').directive('chatWindow', ['connection','$compile',func
         };
 
         var appendReceviedMsg = function (message, id) {
-        	console.log(id);
             $('#'+scope.topic+'-panel').append($compile("<div receiver-msg message='" + message + "' Id='" + id + "'></div>")(scope));
         };
 

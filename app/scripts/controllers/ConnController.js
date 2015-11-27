@@ -2,7 +2,7 @@
  * Created by Nathan on 11/24/2015.
  */
 angular.module('letstalk')
-    .controller('ConnController',['$scope','$location', 'chatFactory', 'connection',  function($scope,$location,chatFactory,connection) {
+    .controller('ConnController',['$scope','$location','chatFactory', 'connection','msgManager',function($scope,$location,chatFactory,connection,msgManager) {
         $scope.clientId = "";
         $scope.topic = "";
 
@@ -30,19 +30,30 @@ angular.module('letstalk')
 
                 //subscribe a topic
                 $scope.client.subscribe($scope.topic,{qos:1},function(err, granted){
-                    if(err){
+                    if(err)
                         console.log('subscribe failed');
-                    }else{
-                        console.log(granted);
-                    };
-                
                 });
+
                 $scope.client.subscribe('topic/'+$scope.clientId,{qos:1},function(err, granted){
-                    if(err){
+                    if(err)
                         console.log('subscribe failed');
-                    }else{
-                        console.log(granted);
-                    };
+                    
+                });
+                //fire on when a msg is received
+                $scope.client.on('message', function (topic, message) {
+                    
+                    // message is Buffer
+                    var packet = JSON.parse(message);
+                    
+                    msgManager.msgQs[packet.Id].push({
+                                                       _id:packet.Id,
+                                                       _msgBody:packet.Msg,
+                                                       _time:Date()
+                                                     });
+                    var chatWindow = msgManager.getScope(packet.Id);
+                    if(chatWindow !== undefined)
+                        chatWindow.$apply();
+                    
                 });
 
                 //save client to global

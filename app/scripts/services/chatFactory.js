@@ -10,6 +10,7 @@ angular.module('letstalk').factory('chatFactory', function () {
                               {id:333,name:'superman'},
                               {id:444,name:'daiana'},
                               {id:555,name:'john'}];
+                              
     chatFactory.groups_list=[];
 
     chatFactory.host='ws://localhost:1889';

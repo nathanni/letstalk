@@ -27,12 +27,12 @@ angular.module('letstalk').controller('ChatController', [
 
 
         //fire on when recevie a message
-        $scope.client.on('message', function (topic, message) {
-            // message is Buffer
-            var packet = JSON.parse(message);
-            if (packet.Id !== $scope.clientId)
-                appendReceviedMsg(packet.Msg, packet.Id);
-        });
+        // $scope.client.on('message', function (topic, message) {
+        //     // message is Buffer
+        //     var packet = JSON.parse(message);
+        //     if (packet.Id !== $scope.clientId)
+        //         appendReceviedMsg(packet.Msg, packet.Id);
+        // });
 
         var appendSentMsg = function (message) {
             $('.panel-body').append($compile("<div sender-msg message='" + message + "' Id='" + $scope.clientId + "'></div>")($scope));

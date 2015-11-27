@@ -1,5 +1,13 @@
  <div class="chat-box-div">
         <div id="{{topic}}-panel" class="panel-body chat-box-main">
+            <div ng-repeat="msg in msgQ">
+                <div ng-if="msg._id==clientId">
+                {{clientId}}:{{msg._msgBody}}
+                </div>
+                 <div ng-if="msg._id==topic">
+                {{topic}}:{{msg._msgBody}}
+                 </div>
+            </div>
         </div>
         <div class="chat-box-footer">
             <div class="input-group">
