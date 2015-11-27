@@ -3,8 +3,13 @@ angular.module('letstalk')
 	$scope.friends_list=chatFactory.friends_list;
 
 	var addChatWindow = function(topic){
-		if(chatManager.getScope(topic) === undefined)
+		var Scope=chatManager.getScope(topic);
+		if(Scope === undefined)
  		$('#chatWindow').append($compile("<div chat-window topic = '"+topic+"''></div>")($scope));
+ 		else if(Scope !== undefined){
+ 		$('#'+topic+'-panel').remove();
+ 		chatManager.storeScope(topic,undefined);
+ 		}
 
 	};
 

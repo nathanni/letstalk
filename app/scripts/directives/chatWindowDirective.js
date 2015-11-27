@@ -15,18 +15,19 @@ angular.module('letstalk').directive('chatWindow', ['connection','$compile','cha
 			
 			//console.log(scope.msgQ);
 			var send = function(){
-				
+				var time = moment().format('YYYY-MM-DD HH:m:s');
 				scope.client.publish("topic/"+scope.topic,
                 JSON.stringify({
                     Id: scope.clientId,
-                    Msg: scope.message
+                    Msg: scope.message,
+                    Time: time
                 }),
                 {qos: 1, retain: true},
                 function () {
                 	scope.msgQ.push({
                 					_id:scope.clientId,
                            			_msgBody:scope.message,
-                            		_time:Date()
+                            		_time:time
                 	});
                     //appendSentMsg(scope.message);
                     scope.message = "";
@@ -34,28 +35,8 @@ angular.module('letstalk').directive('chatWindow', ['connection','$compile','cha
                     scope.$apply();
                 });
 			};
-			
-
 
 			scope.send=send;
-
-			// scope.client.on('message', function (topic, message) {
-			
-   //          // message is Buffer
-   //          var packet = JSON.parse(message);
-   //          if (packet.Id === scope.topic)
-   //              appendReceviedMsg(packet.Msg, packet.Id);
-   //      });
-
-			
-
-		// var appendSentMsg = function (message) {
-  //           $('#'+scope.topic+'-panel').append($compile("<div sender-msg message='" + message + "' Id='" + scope.clientId + "'></div>")(scope));
-  //       };
-
-  //       var appendReceviedMsg = function (message, id) {
-  //           $('#'+scope.topic+'-panel').append($compile("<div receiver-msg message='" + message + "' Id='" + id + "'></div>")(scope));
-  //       };
 
 		}
 	};

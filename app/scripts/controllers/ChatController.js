@@ -19,12 +19,14 @@ angular.module('letstalk').controller('ChatController', [
                 }),
                 {qos: 1, retain: true},
                 function () {
-                    console.log($scope.message);
-                    appendSentMsg($scope.message);
+
                     $scope.message = "";
                 });
         };
 
+        $scope.subscribe=function(){
+            connection.subscribe('chat');
+        }
 
         //fire on when recevie a message
         // $scope.client.on('message', function (topic, message) {
@@ -34,12 +36,12 @@ angular.module('letstalk').controller('ChatController', [
         //         appendReceviedMsg(packet.Msg, packet.Id);
         // });
 
-        var appendSentMsg = function (message) {
-            $('.panel-body').append($compile("<div sender-msg message='" + message + "' Id='" + $scope.clientId + "'></div>")($scope));
-        };
+        // var appendSentMsg = function (message) {
+        //     $('.panel-body').append($compile("<div sender-msg message='" + message + "' Id='" + $scope.clientId + "'></div>")($scope));
+        // };
 
-        var appendReceviedMsg = function (message, id) {
-            $('.panel-body').append($compile("<div receiver-msg message='" + message + "' Id='" + id + "'></div>")($scope));
-        };
+        // var appendReceviedMsg = function (message, id) {
+        //     $('.panel-body').append($compile("<div receiver-msg message='" + message + "' Id='" + id + "'></div>")($scope));
+        // };
 
     }]);

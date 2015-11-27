@@ -9,20 +9,10 @@ angular.module('letstalk').factory('chatManager', function () {
         return chatScope[scope_Id];
     };
 
-    var msgQs = {flash:[{ 
-                            _id:'flash',
-                            _msgBody:'hi this flash',
-                            _time:''
-                           },
-                           {
-                            _id:'flash',
-                            _msgBody:'hi this flash',
-                            _time:''
-                          },
-                          {
-                            _id:'flash',
-                            _msgBody:'hi this flash',
-                            _time:''
+    var msgQs = {flash:[ { 
+                          _id:'flash',
+                          _msgBody:'hi this flash',
+                          _time:''
                           }
                         ],
                   superman:[
