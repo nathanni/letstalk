@@ -1,4 +1,4 @@
-angular.module('letstalk').directive('chatWindow', ['connection','$compile','msgManager',function (connection,$compile,msgManager) {
+angular.module('letstalk').directive('chatWindow', ['connection','$compile','chatManager',function (connection,$compile,chatManager) {
 	return {
 		restrict: 'AE',
 		templateUrl:'views/friends/chatWindow.html',
@@ -6,12 +6,12 @@ angular.module('letstalk').directive('chatWindow', ['connection','$compile','msg
 			topic:'@topic'
 		},
 		link: function (scope, iElement, iAttrs) {
-			msgManager.storeScope(scope.topic,scope);
+			chatManager.storeScope(scope.topic,scope);
 			scope.clientId=connection.clientId;
 			scope.message = "";
 			scope.client=connection.client;
 
-			scope.msgQ = msgManager.msgQs[scope.topic];
+			scope.msgQ = chatManager.msgQs[scope.topic];
 			
 			//console.log(scope.msgQ);
 			var send = function(){

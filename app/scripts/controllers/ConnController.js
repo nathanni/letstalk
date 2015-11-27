@@ -2,7 +2,7 @@
  * Created by Nathan on 11/24/2015.
  */
 angular.module('letstalk')
-    .controller('ConnController',['$scope','$location','chatFactory', 'connection','msgManager',function($scope,$location,chatFactory,connection,msgManager) {
+    .controller('ConnController',['$scope','$location','chatFactory', 'connection','chatManager',function($scope,$location,chatFactory,connection,chatManager) {
         $scope.clientId = "";
         $scope.topic = "";
 
@@ -45,12 +45,12 @@ angular.module('letstalk')
                     // message is Buffer
                     var packet = JSON.parse(message);
                     
-                    msgManager.msgQs[packet.Id].push({
+                    chatManager.msgQs[packet.Id].push({
                                                        _id:packet.Id,
                                                        _msgBody:packet.Msg,
                                                        _time:Date()
                                                      });
-                    var chatWindow = msgManager.getScope(packet.Id);
+                    var chatWindow = chatManager.getScope(packet.Id);
                     if(chatWindow !== undefined)
                         chatWindow.$apply();
                     

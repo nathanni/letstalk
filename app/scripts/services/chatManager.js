@@ -1,4 +1,4 @@
-angular.module('letstalk').factory('msgManager', function () {
+angular.module('letstalk').factory('chatManager', function () {
     var chatScope = {};
 
     var storeScope = function(scope_Id,scope){
