@@ -49,13 +49,13 @@ angular.module('letstalk').directive('chatWindow', ['connection','$compile','msg
 
 			
 
-		var appendSentMsg = function (message) {
-            $('#'+scope.topic+'-panel').append($compile("<div sender-msg message='" + message + "' Id='" + scope.clientId + "'></div>")(scope));
-        };
+		// var appendSentMsg = function (message) {
+  //           $('#'+scope.topic+'-panel').append($compile("<div sender-msg message='" + message + "' Id='" + scope.clientId + "'></div>")(scope));
+  //       };
 
-        var appendReceviedMsg = function (message, id) {
-            $('#'+scope.topic+'-panel').append($compile("<div receiver-msg message='" + message + "' Id='" + id + "'></div>")(scope));
-        };
+  //       var appendReceviedMsg = function (message, id) {
+  //           $('#'+scope.topic+'-panel').append($compile("<div receiver-msg message='" + message + "' Id='" + id + "'></div>")(scope));
+  //       };
 
 		}
 	};
