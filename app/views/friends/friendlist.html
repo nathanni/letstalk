@@ -8,7 +8,7 @@
 
             <div class="chat-box-online-left">
                 
-                <a  class="list-group-item" ng-repeat="friend in friends_list" ng-click="addChatWindow(friend.name)">
+                <a  class="list-group-item" style="cursor: pointer" ng-repeat="friend in friends_list" ng-click="addChatWindow(friend.name)">
                     <div>
                         <img ng-src="images/Avatars/{{friend.name}}.jpg" alt="bootstrap Chat box user image" class="img-circle"/>
                         <span>{{friend.name}}</span>

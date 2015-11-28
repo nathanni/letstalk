@@ -11,7 +11,7 @@ angular.module('letstalk').controller('ChatController', [
 
         //publish a message
         $scope.send = function () {
-
+            
             $scope.client.publish($scope.topic,
                 JSON.stringify({
                     Id: $scope.clientId,
