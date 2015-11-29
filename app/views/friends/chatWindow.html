@@ -1,4 +1,4 @@
- <div id="{{topic}}-panel" class="chat-box-div">
+ <div  class="chat-box-div">
         <div  class="panel-body chat-box-main">
             <div ng-repeat="msg in msgQ">
                 <div ng-if="msg._id==clientId">
@@ -11,7 +11,7 @@
         </div>
         <div class="chat-box-footer">
             <div class="input-group">
-                <input type="text" class="form-control" placeholder="Enter Text Here..." ng-model="message">
+                <input type="text" class="form-control" ui-keypress="{enter:'send()'}" placeholder="Enter Text Here..." ng-model="message">
                             <span class="input-group-btn">
                                 <button class="btn btn-info" type="button" ng-click="send()">SEND</button>
                             </span>

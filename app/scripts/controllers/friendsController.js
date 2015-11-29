@@ -5,12 +5,11 @@ angular.module('letstalk')
 	var addChatWindow = function(topic){
 		var Scope=chatManager.getScope(topic);
 		if(Scope === undefined)
- 		$('#chatWindow').append($compile("<div chat-window topic = '"+topic+"''></div>")($scope));
+ 		$('#chatWindow').append($compile("<chat-window id = '"+topic+"-panel' topic = '"+topic+"''></chat-window>")($scope));
  		else if(Scope !== undefined){
  		$('#'+topic+'-panel').remove();
  		chatManager.storeScope(topic,undefined);
  		}
-
 	};
 
 	$scope.addChatWindow = addChatWindow;

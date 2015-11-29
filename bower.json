@@ -23,6 +23,7 @@
     "mqttjs-browser": "mqtt-browser#~0.0.1",
     "angular-bootstrap": "~0.14.3",
     "moment": "~2.10.6",
-    "font-awesome": "fontawesome#~4.5.0"
+    "font-awesome": "fontawesome#~4.5.0",
+    "angular-ui-keypress": "angular-ui-utils#bower-keypress"
   }
 }

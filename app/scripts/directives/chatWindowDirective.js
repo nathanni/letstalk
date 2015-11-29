@@ -5,6 +5,7 @@ angular.module('letstalk').directive('chatWindow', ['connection','$compile','cha
 		scope:{
 			topic:'@topic'
 		},
+		//replace:true,
 		link: function (scope, iElement, iAttrs) {
 			chatManager.storeScope(scope.topic,scope);
 			scope.clientId=connection.clientId;
@@ -35,6 +36,11 @@ angular.module('letstalk').directive('chatWindow', ['connection','$compile','cha
                     scope.$apply();
                 });
 			};
+
+			var pressEnter=function(keyEvent){
+				if (keyEvent.which === 13)
+				console.log('enter pressed!!!');
+			}
 
 			scope.send=send;
 

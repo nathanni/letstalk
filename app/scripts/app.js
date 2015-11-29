@@ -1,7 +1,7 @@
 /**
  * Created by Nathan on 11/23/2015.
  */
-var letstalk = angular.module('letstalk', ['ui.router','ui.bootstrap']);
+var letstalk = angular.module('letstalk', ['ui.router','ui.bootstrap','ui.keypress']);
 
 
 letstalk.config(function ($stateProvider, $urlRouterProvider) {
@@ -46,7 +46,6 @@ letstalk.config(function ($stateProvider, $urlRouterProvider) {
         url: "/friends",
         views: {
             'main@index': {
-
                 templateUrl: "views/friends/friendlist.html",
                 controller:'friendsController',
                 controllerAs:'FC'
