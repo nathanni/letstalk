@@ -1,7 +1,10 @@
 /**
  * Created by Nathan on 11/23/2015.
  */
-var letstalk = angular.module('letstalk', ['ui.router','ui.bootstrap','ui.keypress']);
+var letstalk = angular.module('letstalk', ['ui.router',
+                                           'ui.bootstrap',
+                                           'ui.keypress',
+                                           'luegg.directives']);
 
 
 letstalk.config(function ($stateProvider, $urlRouterProvider) {

@@ -37,11 +37,6 @@ angular.module('letstalk').directive('chatWindow', ['connection','$compile','cha
                 });
 			};
 
-			var pressEnter=function(keyEvent){
-				if (keyEvent.which === 13)
-				console.log('enter pressed!!!');
-			}
-
 			scope.send=send;
 
 		}
