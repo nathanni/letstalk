@@ -16,6 +16,10 @@ angular.module('letstalk').directive('chatWindow', ['connection','$compile','cha
 			
 			//console.log(scope.msgQ);
 			var send = function(){
+				if(scope.message===""){
+					scope.$apply();
+					return;
+				};
 				var time = moment().format('YYYY-MM-DD HH:m:s');
 				scope.client.publish("topic/"+scope.topic,
                 JSON.stringify({

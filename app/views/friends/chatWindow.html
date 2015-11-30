@@ -1,15 +1,9 @@
  <div  class="chat-box-div ">
-        <div  class="panel-body chat-box-main " scroll-glue>
-            <div ng-repeat="msg in msgQ">
-                <div ng-if="msg._id==clientId" class="bubble bubble-alt pink">
-                    <p class="datestamp">{{msg._time}}</p>
-                    <p>{{msg._msgBody}}</p> 
-                </div>
-                 <div ng-if="msg._id==topic" class="bubble">
-                     <p class="datestamp">{{msg._time}}</p>
-                    <p>{{msg._msgBody}}<p>
-                 </div>
-            </div>
+        <div  class="panel-body chat-box-main " scroll-glue>       
+           
+              <!--   <span class="datestamp">{{msg._time}}</span> -->
+                <p  ng-repeat="msg in msgQ" ng-class="{true:'bubble bubble-alt pink',false:'bubble'}[msg._id===clientId]">{{msg._msgBody}}</p> 
+            
         </div>
         <div class="chat-box-footer">
             <div class="input-group">
