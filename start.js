@@ -18,7 +18,11 @@ var moscaSettings = {
     },
     persistence: {
         factory: mosca.persistence.Mongo,
-        url: 'mongodb://localhost:27017/mqtt'
+        url: 'mongodb://localhost:27017/mqtt',
+        ttl:{
+            subscriptions:1000,
+            packets:1000
+        }
     },
     http: {
         port: 1889,  //web socket port
@@ -66,6 +70,11 @@ function clientDisconnecting(client) {
 function clientDisconnected(client) {
     console.log('clientDisconnected : ', client.id);
 }
+
+// fired when a client subscribes to a topic
+server.on('unsubscribed', function(topic, client) {
+  console.log('unsubscribed : ', topic);
+});
 
 
 
